@@ -30,12 +30,11 @@ sudo wget https://github.com/mc1arke/sonarqube-community-branch-plugin/releases/
 
 sudo echo "sonar.jdbc.username=sonar" >> /opt/sonarqube/conf/sonar.properties
 sudo echo "sonar.jdbc.password=sonar" >> /opt/sonarqube/conf/sonar.properties
-sudo "sonar.jdbc.url=jdbc:postgresql://localhost:5432/sonarqube" >> /opt/sonarqube/conf/sonar.properties
+#sudo echo "sonar.jdbc.url=jdbc:postgresql://localhost:5432/sonarqube" >> /opt/sonarqube/conf/sonar.properties
 
 sudo echo "sonar.web.javaAdditionalOpts=-javaagent:/opt/sonarqube/extensions/plugins/sonarqube-community-branch-plugin-1.14.0.jar=web" >> /opt/sonarqube/conf/sonar.properties
 sudo echo "sonar.ce.javaAdditionalOpts=-javaagent:/opt/sonarqube/extensions/plugins/sonarqube-community-branch-plugin-1.14.0.jar=ce" >> /opt/sonarqube/conf/sonar.properties
 
-sudo nano /etc/systemd/system/sonar.service
 
 sudo echo "[Unit]"                                             >> /etc/systemd/system/sonar.service
 sudo echo "Description=SonarQube service"                      >> /etc/systemd/system/sonar.service
